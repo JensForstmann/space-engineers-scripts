@@ -36,8 +36,8 @@ namespace InventoryStatusDisplay
             g("Gravel", "LCD Panel Status Gravel (SB)", 0, "MyObjectBuilder_Ingot/Stone", "MyObjectBuilder_Ore/Stone", 0.014f),
             g("Uranium", "LCD Panel Status Uranium (SB)", 0, "MyObjectBuilder_Ingot/Uranium", "MyObjectBuilder_Ore/Uranium", 0.01f),
 
-            g("Hydrogen", "LCD Panel Status Hydrogen (SB)", 0, "Hydrogen", "MyObjectBuilder_Ore/Ice", 7.5f),
-            g("Oxygen", "LCD Panel Status Oxygen (SB)", 0, "Oxygen", "MyObjectBuilder_Ore/Ice", 15f),
+            g("Hydrogen", "LCD Panel Status Hydrogen (SB)", 0, "Hydrogen", "MyObjectBuilder_Ore/Ice", 15f),
+            g("Oxygen", "LCD Panel Status Oxygen (SB)", 0, "Oxygen", "MyObjectBuilder_Ore/Ice", 7.5f),
         };
 
         // for item/bp names, see:
