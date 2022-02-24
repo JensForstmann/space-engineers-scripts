@@ -3,6 +3,39 @@
 
 
 
+== Scripts
+
+
+
+=== Auto Crafter
+
+This script automatically produces items if the amount in the network drops below a configurable threshold.
+
+*Configuration*
+
+[source,csharp]
+----
+string assembler = "Assembler (Cube MK-1)";
+Group[] groups = {
+    // g("item name", "bp name", minimum, maximum)
+    g("MyObjectBuilder_Component/SteelPlate", "MyObjectBuilder_BlueprintDefinition/SteelPlate", 20000, 30000),
+    g("MyObjectBuilder_Component/Medical", "MyObjectBuilder_BlueprintDefinition/MedicalComponent", 10, 20),
+};
+----
+
+You can configure as many groups as you want.
+
+The item name is the internal name of the item which you can take in your inventory or put into cargo containers.
+
+The blueprint (bp) name is the internal name of the recipe in the assembling machine which is put into the queue to craft the item.
+
+If the amount of an item in the network (across all inventories connected with conveyor tubes) drops below the `minimum` it will craft this item to reach the maximum.
+
+For a list with item and blueprint names, see this comment on reddit:
+https://www.reddit.com/r/spaceengineers/comments/adbzhf/comment/edgjo48
+
+
+
 == How this repository works
 
 1. `src/template.cs` can be copied for a new script, be sure to change the namespace from `Template` to something unique (for this project)
