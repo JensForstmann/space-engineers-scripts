@@ -65,6 +65,40 @@ To not consider ore (source item name and conversion rate) just put in an empty 
 
 
 
+=== Sun Alignment
+
+The script tries to rotate reference solar panels so that they do not get any sunlight.
+
+This reference panel should be orthogonal to the panels/oxygen farms you want the most sunlight for.
+
+If the reference panels get no sunlight, then the normal panels/oxygen farms have maximum efficiency.
+
+*Example layout*
+
+image::images/sun-alignment-1a.png[Sun Alignment Solar,800,500]
+
+image::images/sun-alignment-2a.png[Sun Alignment Oxygen,800,500]
+
+*Configuration*
+
+[source,csharp]
+----
+Group[] groups = {
+    // g("name of solar panel that should not get sunlight", "name of rotor to rotate solar panel")
+    g("Solar Panel Left Reference", "Rotor Solar Left"),
+    g("Solar Panel Right Reference", "Rotor Solar Right"),
+    g("Solar Panel Ground Reference", "Rotor Solar Ground"),
+};
+----
+
+Example: Every color is a group of a reference panel and the rotor.
+
+image::images/sun-alignment-1b.png[Sun Alignment Solar,400,250]
+
+image::images/sun-alignment-2b.png[Sun Alignment Oxygen,400,250]
+
+
+
 == How this repository works
 
 1. `src/template.cs` can be copied for a new script, be sure to change the namespace from `Template` to something unique (for this project)
