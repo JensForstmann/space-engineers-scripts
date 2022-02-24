@@ -36,6 +36,35 @@ https://www.reddit.com/r/spaceengineers/comments/adbzhf/comment/edgjo48
 
 
 
+=== Inventory Status Display
+
+This script will print the status of various items (primarily ingots) on LCD panels, one panel per item.
+
+Besides the current amount of e.g. iron ingots, the script can look for iron ore and calculate what theoretically can be refined.
+
+image::images/inventory-status-display-1.png[Inventory Status Display,800,500]
+
+*Configuration*
+
+[source,csharp]
+----
+Group[] groups = {
+    // g("label", "display block name", display number, "item name", "source item name", conversion rate),
+    g("Cobalt", "LCD Panel Status Cobalt (SB)", 0, "MyObjectBuilder_Ingot/Cobalt", "MyObjectBuilder_Ore/Cobalt", 0.3f),
+    g("Gold", "LCD Panel Status Gold (SB)", 0, "MyObjectBuilder_Ingot/Gold", "MyObjectBuilder_Ore/Gold", 0.01f),
+    g("Iron", "LCD Panel Status Iron (SB)", 0, "MyObjectBuilder_Ingot/Iron", "MyObjectBuilder_Ore/Iron", 0.7f),
+};
+----
+
+To not consider ore (source item name and conversion rate) just put in an empty string and a zero:
+
+[source,csharp]
+----
+    g("Uranium", "LCD Panel Status Uranium (SB)", 0, "MyObjectBuilder_Ingot/Uranium", "", 0f),
+----
+
+
+
 == How this repository works
 
 1. `src/template.cs` can be copied for a new script, be sure to change the namespace from `Template` to something unique (for this project)
