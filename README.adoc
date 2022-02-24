@@ -1,0 +1,41 @@
+= Space Engineers Scripts
+:toc:
+
+
+
+== How this repository works
+
+1. `src/template.cs` can be copied for a new script, be sure to change the namespace from `Template` to something unique (for this project)
+2. Do not remove the `// start` and `// end` comments and put the script code in between those.
+3. Code
+4. Press CTRL + F5 (default shortcut for "Run Without Debugging"), this will run an export script (see below for details).
+
+
+
+=== Export Script
+
+The file `export.ps1` is used to export the currently opened file.
+If executed via VS Code (see `.vscode/launch.json`) it will be called with parameters about the currently opened file.
+
+The script does the following two things:
+
+1. It creates/updates a `script.*.txt` file in the top level of this workspace.
+2. It copies the content of the script into the clipboard.
+
+Both are ready for use to paste into the ingame editor of a Programmable Block.
+
+Internally it reads the content of the currently opened file, extracts everything between `// start` and `// end` and strips the leading spaces.
+
+
+
+=== csproj
+
+The file `space-engineers-scripts.csproj` works with the default Steam installation folder.
+
+If the game is installed somewhere else the paths in this file have to be changed.
+
+Installed software:
+
+- VS Code
+- VS Code Extension C# (ms-dotnettools.csharp): https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp
+- .NET 6
